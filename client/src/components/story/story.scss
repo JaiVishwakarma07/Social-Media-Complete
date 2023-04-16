@@ -1,0 +1,42 @@
+@import "../../style.scss";
+
+.SingleStory {
+    @include themify($themes) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.986);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+
+        .wrapper {
+            margin: auto;
+            background-color: themed("bg");
+            z-index: 999;
+            display: flex;
+            -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+            -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+            box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+            position: relative;
+
+
+        }
+
+        .but {
+            text-decoration: none;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            border: none;
+            font-size: 30px;
+            background-color: transparent;
+            padding: 5px;
+            cursor: pointer;
+            color: white;
+        }
+    }
+}

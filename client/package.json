@@ -15,6 +15,7 @@
     "moment": "^2.29.4",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-insta-stories": "^2.5.9",
     "react-query": "^3.39.3",
     "react-router": "^6.8.0",
     "react-router-dom": "^6.8.0",

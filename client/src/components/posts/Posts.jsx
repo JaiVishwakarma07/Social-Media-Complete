@@ -11,11 +11,11 @@ const Posts = ({ userId }) => {
             return res.data;
         })
     )
-    // console.log(data);
+    console.log(data);
     return (
         <div className='posts'>
-            {error ? "somthing went wrong" : isLoading ? "loading" : data.map(post =>
-                <Post post={post} key={post.id} />
+            {error ? "somthing went wrong" : isLoading ? "loading" : data.map((post, i) =>
+                <Post post={post} key={i} />
             )}
         </div>
     )

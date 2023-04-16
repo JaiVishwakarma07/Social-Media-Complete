@@ -12,6 +12,14 @@ export const getUser = (req, res) => {
     })
 }
 
+export const getSearch = (req, res) => {
+    const q = "SELECT id,name,profilePic FROM users ";
+    db.query(q, (err, data) => {
+        if (err) return res.status(500).json(err);
+        return res.json(data);
+    })
+}
+
 export const updateUser = (req, res) => {
     const token = req.cookies.accessToken;
     if (!token) return res.status(401).json("Not Logged In!");

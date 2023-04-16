@@ -12,9 +12,10 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Posts from "../../components/posts/Posts"
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 import { makeRequest } from "../../axios"
-import { useLocation } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../context/authContext';
 import Update from '../../components/update/Update';
+
 
 
 const Profile = () => {
@@ -22,6 +23,7 @@ const Profile = () => {
     const [openUpdate, setOpenUpdate] = useState(false)
     const userId = parseInt(useLocation().pathname.split("/")[2])
     const { currentUser } = useContext(AuthContext)
+    const navigate = useNavigate()
 
     const { isLoading, error, data } = useQuery(['user'], () =>
         makeRequest.get("/users/find/" + userId).then((res) => {
@@ -36,7 +38,6 @@ const Profile = () => {
         })
     )
 
-    // console.log(relationshipData);
     const queryClient = useQueryClient();
 
     const mutation = useMutation(
@@ -51,10 +52,26 @@ const Profile = () => {
             },
         }
     );
+
+    const handleClick = async (data) => {
+        const id = data.id
+        try {
+            const res = await makeRequest.get(`conversations/single/${id}`)
+            console.log(res.data)
+            navigate(`/message/${res.data[0].id}`)
+        } catch (error) {
+            if (error.response.status === 404) {
+                const res = await makeRequest.post(`/conversations/`, { user2: id })
+                // console.log(res.data)
+                navigate(`/message/${res.data[0].id}`)
+            }
+            // console.log(error.response.status)
+        }
+    }
+
     const handleFollow = () => {
         mutation.mutate(relationshipData.includes(currentUser.id))
     }
-    console.log(userId);
     return (
 
         <div className="profile">
@@ -99,15 +116,18 @@ const Profile = () => {
                             </button>)}
                         </div>
                         <div className="right">
-                            <EmailOutlinedIcon />
+                            <span onClick={() => handleClick(data)}><EmailOutlinedIcon /></span>
+                            {/* {cloading ? "." : <Link to={`/message/${cdata.id}`}><EmailOutlinedIcon /></Link>} */}
                             <MoreVertIcon />
                         </div>
                     </div>
                     <Posts userId={userId} />
                 </div>
-            </>)}
+            </>)
+            }
             {openUpdate && <Update setOpenUpdate={setOpenUpdate} user={data} />}
-        </div>
+
+        </div >
     )
 }
 

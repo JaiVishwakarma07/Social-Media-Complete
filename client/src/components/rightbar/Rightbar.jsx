@@ -34,7 +34,7 @@ const RightBar = () => {
                         <div className="userInfo">
                             <img src="https://static.toiimg.com/photo/95715563/95715563.jpg?v=3" alt="" />
                             <p>
-                                <span>Pooja Hegde</span>  changed their Boyfriend
+                                <span>Pooja Hegde</span>  changed their photo
                             </p>
                         </div>
                         <span>1 min ago</span>
@@ -43,7 +43,7 @@ const RightBar = () => {
                         <div className="userInfo">
                             <img src="https://static.toiimg.com/photo/95715563/95715563.jpg?v=3" alt="" />
                             <p>
-                                <span>Pooja Hegde</span>  changed their Boyfriend
+                                <span>Pooja Hegde</span>  changed their photo
                             </p>
                         </div>
                         <span>1 min ago</span>

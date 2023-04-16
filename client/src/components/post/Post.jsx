@@ -66,11 +66,10 @@ const Post = ({ post }) => {
             <div className="container">
                 <div className="user">
                     <div className="userInfo">
-                        <img src={post.profilePic} alt="" />
+                        <img src={"/upload/" + post.profilePic} alt="" />
                         <div className="details">
                             <Link to={`/profile/${post.userId}`} style={{ textDecoration: "none", color: "inherit" }}>
                                 <span className='name'>{post.name}</span>
-
                             </Link>
                             <span className='date'>{moment(post.createdAt).fromNow()}</span>
                         </div>
@@ -84,7 +83,7 @@ const Post = ({ post }) => {
                 </div>
                 <div className="info">
                     <div className='item'>
-                        {isLoading ? "" : data.includes(currentUser.id) ? <FavoriteOutlinedIcon style={{ color: "red" }} onClick={handleLike} /> : <FavoriteBorderOutlinedIcon onClick={handleLike} />}
+                        {isLoading ? "" : error ? "error" : data.includes(currentUser.id) ? <FavoriteOutlinedIcon style={{ color: "red" }} onClick={handleLike} /> : <FavoriteBorderOutlinedIcon onClick={handleLike} />}
                         {isLoading ? "" : data.length} Likes
                     </div>
                     <div className='item' onClick={() => setCommentOpen(!commentOpen)}>

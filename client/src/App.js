@@ -16,6 +16,11 @@ import "./style.scss"
 import { useContext } from "react";
 import { AuthContext } from "./context/authContext";
 import { QueryClient, QueryClientProvider } from 'react-query'
+import Friends from "./components/friends/Friends";
+import Messages from "./pages/messages/Messages";
+import Message from "./pages/message/Message";
+import Story from "./components/story/Story";
+
 
 function App() {
 
@@ -60,6 +65,22 @@ function App() {
         {
           path: "/profile/:id",
           element: <Profile />
+        },
+        {
+          path: "friends/:id",
+          element: <Friends />
+        },
+        {
+          path: "messages",
+          element: <Messages />
+        },
+        {
+          path: "message/:id",
+          element: <Message />
+        },
+        {
+          path: "story/:id",
+          element: <Story />
         }
       ]
     },

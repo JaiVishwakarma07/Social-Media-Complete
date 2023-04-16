@@ -11,6 +11,16 @@ export const getRelationships = (req, res) => {
     })
 }
 
+export const getFriends = (req, res) => {
+    const q = "SELECT followedUserid FROM relationships WHERE followerUserid = ?";
+
+    db.query(q, [req.query.followerUserid], (err, data) => {
+        if (err) return res.status(500).json(err);
+        return res.status(200).json(data.map(relationship => relationship.followedUserid));
+    })
+}
+
+
 export const addRelationships = (req, res) => {
     const token = req.cookies.accessToken;
     if (!token) return res.status(401).json("Not Logged In!");
