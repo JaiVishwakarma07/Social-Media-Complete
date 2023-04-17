@@ -32,7 +32,7 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <div className="theme-light">
           <Navbar />
-          <div style={{ display: "flex" }}>
+          <div style={{ display: "flex", backgroundColor: "#F0F2F5" }}>
             <LeftBar />
             <div style={{ flex: 6 }}>
               <Outlet />

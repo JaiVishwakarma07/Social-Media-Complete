@@ -3,7 +3,7 @@
 .home {
     @include themify($themes) {
         position: sticky;
-        background-color: themed("bgSoft");
+        background-color: #F0F2F5;
 
         @include mobile {
             padding: 10px;

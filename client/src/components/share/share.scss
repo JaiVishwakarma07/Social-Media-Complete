@@ -5,7 +5,7 @@
         -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
         -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
         box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
-        border-radius: 20px;
+        border-radius: 10px;
         background-color: themed("bg");
         color: themed("textColor");
         margin-bottom: 20px;
@@ -91,11 +91,11 @@
                 .right {
                     button {
                         border: none;
-                        padding: 5px;
+                        padding: 10px;
                         color: white;
                         cursor: pointer;
-                        background-color: #5271ff;
-                        border-radius: 3px;
+                        background-color: #1976D2;
+                        border-radius: 5px;
                     }
                 }
             }

@@ -31,7 +31,7 @@ const Register = () => {
         <div className="register">
             <div className="card">
                 <div className="left">
-                    <h1>Jai Social</h1>
+                    <h1>TanStack</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inci
                         didunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitati
                         on ullamco laboris nisi ut aliquip ex ea commodo consequat..</p>

@@ -81,6 +81,7 @@ const Post = ({ post }) => {
                     <p>{post.desc}</p>
                     <img src={"/upload/" + post.img} alt="" />
                 </div>
+                <hr />
                 <div className="info">
                     <div className='item'>
                         {isLoading ? "" : error ? "error" : data.includes(currentUser.id) ? <FavoriteOutlinedIcon style={{ color: "red" }} onClick={handleLike} /> : <FavoriteBorderOutlinedIcon onClick={handleLike} />}

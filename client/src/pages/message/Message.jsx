@@ -44,7 +44,9 @@ const Message = () => {
                 <div className="heading">
                     <img src="https://static.freeimages.com/images/home/filetypes/photo.png" alt="" />
                     <h2>Chats</h2>
+
                 </div>
+                <hr className="chr" />
                 <div className="conversations">
                     {data.map((item) => (
                         <div className={currentUser.id === item.senderid ? "item sender" : "item"} key={item.id}>

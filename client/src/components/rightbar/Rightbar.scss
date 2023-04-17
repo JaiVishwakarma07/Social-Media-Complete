@@ -8,6 +8,7 @@
         //margin-top: 70px;
         position: sticky;
         overflow: scroll;
+        background-color: #F0F2F5;
 
         @include mobile {
             display: none;
@@ -31,6 +32,7 @@
 
                 padding: 20px;
                 margin-bottom: 20px;
+                background-color: white;
 
 
                 span {
@@ -85,13 +87,13 @@
 
                         button {
                             border: none;
-                            padding: 5px;
+                            padding: 7px;
                             color: white;
                             cursor: pointer;
-                            border-radius: 3px;
+                            border-radius: 5px;
 
                             &:first-child {
-                                background-color: #2444d0;
+                                background-color: #1976D2;
                             }
 
                             &:last-child {

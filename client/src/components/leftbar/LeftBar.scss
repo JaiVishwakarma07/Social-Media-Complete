@@ -7,6 +7,7 @@
         height: calc(100vh - 70px);
         position: sticky;
         overflow: scroll;
+        background-color: #F0F2F5;
 
         @include mobile {
             display: none;
@@ -33,6 +34,7 @@
 
                 span {
                     font-size: 12px;
+                    font-weight: bold;
                 }
 
                 .user {
@@ -59,6 +61,13 @@
 
                     img {
                         width: 30px;
+                        // background-position: 0;
+                        // background-size: 38px 570px;
+                        // width: 30px;
+                        // height: 30px;
+                        // background-repeat: no-repeat;
+                        // display: inline-block;
+                        // object-fit: cover;
                     }
 
                     span {
