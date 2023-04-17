@@ -11,7 +11,7 @@ const Posts = ({ userId }) => {
             return res.data;
         })
     )
-    console.log(data);
+    // console.log(userId);
     return (
         <div className='posts'>
             {error ? "somthing went wrong" : isLoading ? "loading" : data.map((post, i) =>

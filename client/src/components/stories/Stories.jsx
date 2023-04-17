@@ -4,16 +4,18 @@ import { AuthContext } from "../../context/authContext"
 import { Link, useLocation } from "react-router-dom";
 import { makeRequest } from '../../axios';
 import { useQuery } from 'react-query';
+import Story from '../story/Story';
 // import Story from '../story/Story';
 const Stories = () => {
     const { currentUser } = useContext(AuthContext);
     const { isLoading, error, data } = useQuery(['story'], () =>
-        makeRequest.get("/relationships/friends?followerUserid=" + currentUser.id).then((res) => {
+        makeRequest.get("/story").then((res) => {
             const result = res.data;
             return result;
         })
     )
-    console.log(data)
+    // console.log(data)
+    // if (!isLoading) console.log(data[0].id)
 
     // const stories = [
     //     {
@@ -45,12 +47,10 @@ const Stories = () => {
                     <span>{currentUser.name}</span>
                     <button>+</button>
                 </div>
-                {data.map(story => (
-                    <div className="story" key={story.id}>
-                        <Link to="/story/123"><img src="https://img.mensxp.com/media/content/2023/Jan/rashmika-strength-1_63bd356b1f6cb.jpeg " alt="" /></Link>
-                        <span>name</span>
-                    </div>
-                ))}
+                {data.map(() => (<div className="story">
+                    <Link to={`/story/1`}><img src="https://img.mensxp.com/media/content/2023/Jan/rashmika-strength-1_63bd356b1f6cb.jpeg " alt="" /></Link>
+                    <span>name</span>
+                </div>))}
             </div>
             }
         </>
