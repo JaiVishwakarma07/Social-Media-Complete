@@ -5,7 +5,8 @@ import { Link, useLocation } from "react-router-dom";
 import { makeRequest } from '../../axios';
 import { useQuery } from 'react-query';
 import Story from '../story/Story';
-// import Story from '../story/Story';
+import storyicon from "../../assets/story.png";
+
 const Stories = () => {
     const { currentUser } = useContext(AuthContext);
     const { isLoading, error, data } = useQuery(['story'], () =>
@@ -41,6 +42,10 @@ const Stories = () => {
     // ];
     return (
         <>
+            <div className="head">
+                <img src={storyicon} alt="" />
+                <h2>Stories</h2>
+            </div>
             {isLoading ? "loding" : <div className='Stories'>
                 <div className="story">
                     <img src={"/upload/" + currentUser.profilePic} alt="" />

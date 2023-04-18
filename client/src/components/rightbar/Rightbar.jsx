@@ -28,6 +28,7 @@ const RightBar = () => {
                         </div>
                     </div>
                 </div>
+                <hr />
                 <div className="item">
                     <span>Latest Activities</span>
                     <div className="user">
@@ -67,6 +68,7 @@ const RightBar = () => {
                         <span>1 min ago</span>
                     </div>
                 </div>
+                <hr />
                 <div className="item">
                     <span>Online Friends</span>
                     <div className="user">

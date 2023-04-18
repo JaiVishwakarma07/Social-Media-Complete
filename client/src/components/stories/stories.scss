@@ -1,12 +1,33 @@
 @import "../../style.scss";
 
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: -5px;
+    padding: 10px 0px;
+    border-radius: 5px;
+    color: #078ee9;
+    gap: 10px;
+
+    img {
+        height: 30px;
+        width: 30px;
+    }
+}
+
 .Stories {
     @include themify($themes) {
         display: flex;
         gap: 10px;
         height: 250px;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
         margin-top: 10px;
+        background-color: white;
+        padding: 20px 10px;
+        border-radius: 10px;
 
         @include mobile {
             height: 50px;
@@ -42,8 +63,8 @@
                 position: absolute;
                 bottom: 10px;
                 left: 10px;
-                color: rgb(0, 0, 0);
-                font-weight: 500;
+                color: white;
+                font-weight: bold;
 
                 @include mobile {
                     display: none;
